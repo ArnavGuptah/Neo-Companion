@@ -85,9 +85,6 @@ Neo-Companion/
 │   ├── sound_effects.py
 │   └── voice_companion.py
 │
-├── data/
-│   └── neo_behaviour.py
-│
 ├── analytics/
 │   ├── analysis.py
 │   └── catalogue.py
@@ -104,7 +101,7 @@ Neo-Companion/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/Neo-Companion.git
+git clone https://github.com/ArnavGuptah/Neo-Companion.git
 cd Neo-Companion
 ```
 
@@ -130,15 +127,25 @@ pip install -r requirements.txt
 
 ### 4. Download the required AI models
 
-Neo uses external model assets that are intentionally not included in this repository.
+Neo uses external model assets that are intentionally excluded from this repository.
 
-- Download and extract the Vosk English model `vosk-model-small-en-us-0.15` into the expected local model directory.
-- Faster-Whisper downloads its selected transcription model when initialized, unless it is already cached.
-- Download a compatible Piper voice model and its corresponding configuration file if Piper TTS is enabled.
+**Vosk**
+- Download `vosk-model-small-en-us-0.15`.
+- Extract it into `models/vosk-model-small-en-us-0.15/` in the project root.
 
-Configure the local model paths according to the application's settings.
+**Faster-Whisper**
+- The selected transcription model is downloaded automatically when initialized, unless already cached.
 
-**Note:** Model paths and voice configuration may require adjustment for a new installation.
+**Piper TTS**
+- Download the compatible Piper Amy voice model and its JSON configuration file.
+- Place both files in the `voices/` directory by default:
+  - `en_US-amy-medium.onnx`
+  - `en_US-amy-medium.onnx.json`
+
+- Alternatively, specify a custom voice directory using PowerShell:
+
+```powershell
+$env:NEO_PIPER_VOICE_DIR = "D:\NeoModels\Piper"
 
 ### 5. Run Neo
 
