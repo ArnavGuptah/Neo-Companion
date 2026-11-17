@@ -1,0 +1,37 @@
+﻿# Python environments
+.venv/
+venv/
+env/
+neo-companion/
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*.bak
+
+# Downloaded AI models and caches
+models/
+.cache/
+huggingface/
+**/.cache/
+
+# Runtime data and personal state
+data/*.db
+neo/neo_memory.json
+neo_events.csv
+neo_mood_durations.csv
+
+# Local configuration and secrets
+.env
+.env.*
+config.json
+
+# Logs and temporary files
+*.log
+*.tmp
+.pytest_cache/
+.mypy_cache/
+
+
+voices/
+data/neo_behaviour.py
